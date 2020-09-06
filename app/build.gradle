@@ -44,6 +44,10 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+
     // ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     // LiveData
@@ -67,9 +71,14 @@ dependencies {
 
     // Hilt
     implementation "com.google.dagger:hilt-android:$hilt_version"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_lifecycle_version"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    kapt "androidx.hilt:hilt-compiler:$hilt_lifecycle_version"
 
     //Picasso
     implementation "com.squareup.picasso:picasso:$picasso_version"
+
+    //Timber
+    implementation 'com.jakewharton.timber:timber:4.7.1'
 
 }
