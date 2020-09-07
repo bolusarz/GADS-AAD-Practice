@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.bolusarz.gap.data.models.Form
 import com.bolusarz.gap.data.models.Learner
 import com.bolusarz.gap.data.models.Resource
 import com.bolusarz.gap.data.repositories.LearnerRepository
@@ -55,6 +56,17 @@ class LearnerViewModel @ViewModelInject
                     result.postValue(listOf())
                 }
             }
+        }
+        return result
+    }
+
+    fun submitProject(form: Form): LiveData<Boolean> {
+        val result = MutableLiveData<Boolean>()
+        viewModelScope.launch(Dispatchers.IO) {
+            val response = repo.submitProject(form)
+            if (response.status == Resource.Status.ERROR)
+                Timber.e(response.message)
+            result.postValue(response.status == Resource.Status.SUCCESS)
         }
         return result
     }

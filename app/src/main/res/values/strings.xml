@@ -5,4 +5,7 @@
     <string name="tab_text_1">Learning Leaders</string>
     <string name="tab_text_2">Skill IQ Leaders</string>
     <string name="title_activity_g_form">GFormActivity</string>
+    <string name="user_firstname_label">First name</string>
+    <string name="user_surname_label">Surname</string>
+    <string name="user_email_label">Email Address</string>
 </resources>
