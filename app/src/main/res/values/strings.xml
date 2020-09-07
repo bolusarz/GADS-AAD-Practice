@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">GAP</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_1">Learning Leaders</string>
+    <string name="tab_text_2">Skill IQ Leaders</string>
     <string name="title_activity_g_form">GFormActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
