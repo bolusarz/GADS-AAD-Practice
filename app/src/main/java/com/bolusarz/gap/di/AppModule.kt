@@ -17,7 +17,7 @@ import timber.log.Timber
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
-const val BASE_URL = "https://gadsapi.herokuapp.com/api"
+const val BASE_URL = "https://gadsapi.herokuapp.com/api/"
 
 @Module
 @InstallIn(ApplicationComponent::class)
@@ -25,11 +25,11 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideRetrofit(gson: Gson, client: OkHttpClient) : Retrofit =
+    fun provideRetrofit(client: OkHttpClient) : Retrofit =
         Retrofit
         .Builder()
         .baseUrl(BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create(gson))
+        .addConverterFactory(GsonConverterFactory.create())
         .client(client)
         .build()
 

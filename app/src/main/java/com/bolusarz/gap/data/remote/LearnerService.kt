@@ -4,6 +4,7 @@ import com.bolusarz.gap.data.models.Learner
 import retrofit2.Response
 import retrofit2.http.GET
 
+
 interface LearnerService {
 
     @GET("hours")
