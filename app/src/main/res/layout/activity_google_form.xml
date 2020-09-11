@@ -9,33 +9,72 @@
     tools:context=".GFormActivity"
     tools:ignore="Autofill" >
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/gads"
+            tools:ignore="ContentDescription" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Project Submission"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        android:textColor="@color/colorBtnOutline"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorBtnOutline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
     <EditText
-        android:id="@+id/nameEtv"
+        android:id="@+id/fnameEtv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/input_bg"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="@string/user_firstname_label"
-        android:layout_marginEnd="10dp"
-        app:layout_constraintEnd_toStartOf="@+id/surnameEtv"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/snameEtv"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/divider" />
 
     <EditText
-        android:id="@+id/surnameEtv"
+        android:id="@+id/snameEtv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/input_bg"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="@string/user_surname_label"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/nameEtv"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/fnameEtv"
+        app:layout_constraintTop_toTopOf="@+id/fnameEtv" />
 
     <EditText
         android:id="@+id/emailEtv"
@@ -48,7 +87,7 @@
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameEtv" />
+        app:layout_constraintTop_toBottomOf="@+id/fnameEtv" />
 
     <EditText
         android:id="@+id/linkEtv"
@@ -57,21 +96,24 @@
         android:layout_marginTop="40dp"
         android:background="@drawable/input_bg"
         android:ems="10"
-        android:hint="Project on GITHUB (link)"
-        android:inputType="textEmailAddress"
+        android:hint="@string/user_git_link_label"
+        android:inputType="textUri"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailEtv" />
 
     <Button
         android:id="@+id/submitBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
         android:text="@string/prompt_submit"
+        android:textColor="@color/colorAccent"
+        android:background="@drawable/btn_filled"
+        android:backgroundTint="@color/colorBtnOutline"
+        style="@style/Widget.AppCompat.Button.Borderless"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linkEtv" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

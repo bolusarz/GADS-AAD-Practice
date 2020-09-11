@@ -58,10 +58,6 @@ object AppModule {
     fun provideLearnerService(retrofit: Retrofit): LearnerService =
         retrofit.create(LearnerService::class.java)
 
-    @Provides
-    fun provideLearnerRemoteDataSource(service: LearnerService): LearnerRemoteDataSource =
-        LearnerRemoteDataSource(service)
-
     @Singleton
     @Provides
     fun provideRepository(dataSource: LearnerRemoteDataSource): LearnerRepository =

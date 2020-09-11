@@ -8,4 +8,7 @@
     <string name="user_firstname_label">First name</string>
     <string name="user_surname_label">Surname</string>
     <string name="user_email_label">Email Address</string>
+    <string name="user_git_link_label">Project on GITHUB (link)</string>
+    <string name="confirm_text">Are you sure?</string>
+    <string name="positive_label">Yes</string>
 </resources>
